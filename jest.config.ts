@@ -6,10 +6,19 @@ const createJestConfig = nextJest({
 })
 
 const config: Config = {
+  verbose: true,
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
+  testPathIgnorePatterns: ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$'],
+  collectCoverage: true,
+  collectCoverageFrom: ['src/**/*.ts(x)?'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1'
+  },
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  modulePaths: ['<rootDir>/src/'],
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }]
   }
 }
 

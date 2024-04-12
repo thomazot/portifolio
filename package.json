@@ -7,17 +7,23 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "jest --passWithNoTests --maxWorkers=50%",
+    "test:watch": "jest --watch --maxWorkers=25%",
+    "test:ci": "jest --runInBand"
   },
   "dependencies": {
     "next": "14.2.0",
     "react": "^18",
     "react-dom": "^18",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.8",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^15.0.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^29.5.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
