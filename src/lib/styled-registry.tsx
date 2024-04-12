@@ -12,6 +12,7 @@ export const StyledComponentsRegistry = ({
   const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet())
 
   useServerInsertedHTML(() => {
+    console.log('teste')
     const styles = styledComponentsStyleSheet.getStyleElement()
     styledComponentsStyleSheet.instance.clearTag()
     return <>{styles}</>

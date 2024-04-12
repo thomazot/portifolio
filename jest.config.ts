@@ -9,11 +9,19 @@ const config: Config = {
   verbose: true,
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
+  collectCoverageFrom: [
+    'src/**/*.ts(x)?',
+    '!src/**/*(layout|page|loading|not-fount|error|global-error|route|template|default).ts(x)?'
+  ],
   testPathIgnorePatterns: ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$'],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.ts(x)?'],
+  coverageThreshold: {
+    global: {
+      lines: 90
+    }
+  },
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1'
+    '^@/(.*)$': '<rootDir>/src/$1'
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   modulePaths: ['<rootDir>/src/'],
