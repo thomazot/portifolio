@@ -11,6 +11,7 @@ function listEscape(filenames) {
 module.exports = {
   '*.{js,jsx,ts,tsx}': (filenames) => [
     `prettier --write ${listQuote(listEscape(filenames)).join(' ')}`,
-    `eslint --fix ${listQuote(filenames).join(' ')}`
+    `eslint --fix ${listQuote(filenames).join(' ')}`,
+    `pnpm test`
   ]
 }
