@@ -13,7 +13,7 @@ const config: Config = {
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts(x)?'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1'
+    '^@/(.*)$': '<rootDir>/src/$1'
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   modulePaths: ['<rootDir>/src/'],
