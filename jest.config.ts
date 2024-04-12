@@ -15,6 +15,11 @@ const config: Config = {
   ],
   testPathIgnorePatterns: ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$'],
   collectCoverage: true,
+  coverageThreshold: {
+    global: {
+      lines: 90
+    }
+  },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1'
   },
