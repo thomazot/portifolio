@@ -1,21 +1,8 @@
 import React from 'react'
 import type { Preview } from '@storybook/react'
 
-import { Inter, Roboto_Mono } from 'next/font/google'
-
 import { StyledGlobal } from '../src/lib/styled/styled-global'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap'
-})
-
-const roboto_mono = Roboto_Mono({
-  subsets: ['latin'],
-  variable: '--font-roboto-mono',
-  display: 'swap'
-})
+import { fonts } from '../src/lib/styled/styled-registry'
 
 const preview: Preview = {
   parameters: {
@@ -28,7 +15,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className={`${inter.variable} ${roboto_mono.variable}`}>
+      <div className={fonts}>
         <div className="font-family">
           <StyledGlobal />
           <Story />

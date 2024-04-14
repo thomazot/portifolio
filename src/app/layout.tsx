@@ -1,19 +1,6 @@
 import type { Metadata } from 'next'
-import { Inter, Roboto_Mono } from 'next/font/google'
 
-import { StyledRegistry } from '@/lib/styled/styled-registry'
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap'
-})
-
-const roboto_mono = Roboto_Mono({
-  subsets: ['latin'],
-  variable: '--font-roboto-mono',
-  display: 'swap'
-})
+import { fonts, StyledRegistry } from '@/lib/styled/styled-registry'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -27,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${roboto_mono.variable}`}>
+      <body className={fonts}>
         <StyledRegistry>{children}</StyledRegistry>
       </body>
     </html>
