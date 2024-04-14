@@ -11,6 +11,7 @@ const config: Config = {
   testEnvironment: 'jsdom',
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
+    '!src/**/*.stories.ts(x)?',
     '!src/**/*(layout|page|loading|not-fount|error|global-error|route|template|default).ts(x)?'
   ],
   testPathIgnorePatterns: ['/node_modules/', '^.+\\.module\\.(css|sass|scss)$'],
