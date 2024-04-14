@@ -1,11 +1,19 @@
-import './globals.css'
-
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Roboto_Mono } from 'next/font/google'
 
-import { StyledComponentsRegistry } from '@/lib/styled-registry'
+import { StyledRegistry } from '@/lib/styled/styled-registry'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap'
+})
+
+const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  variable: '--font-roboto-mono',
+  display: 'swap'
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,8 +27,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      <body className={`${inter.variable} ${roboto_mono.variable}`}>
+        <StyledRegistry>{children}</StyledRegistry>
       </body>
     </html>
   )

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 
-import { StyledComponentsRegistry } from './styled-registry'
+import { StyledComponentsRegistry } from './styled-components-registry'
 
 jest.mock('next/navigation', () => {
   return {
