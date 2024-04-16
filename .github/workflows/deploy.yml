@@ -22,4 +22,4 @@ jobs:
       with:
         path: storybook-static
         build_command: npm run build-storybook
-        install_command: npm run install
+        install_command: npm install
