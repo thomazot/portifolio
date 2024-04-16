@@ -1,6 +1,9 @@
 name: Build and Deploy Storybook
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
