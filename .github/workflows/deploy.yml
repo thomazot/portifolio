@@ -1,31 +1,19 @@
+name: Deploy to GitHub Pages
+
 on:
   push:
     branches:
-      - "main" # change to the branch you wish to deploy from
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Use Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20.12.1'
-          
-      - name: Install dependencies
-        run: npm install
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Build Storybook
-        run: npm run build-storybook
-
-      - name: Deploy Storybook
-        run: npm run deploy-storybook
+    - name: Build and deploy Storybook
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        publish_dir: ./storybook-static
