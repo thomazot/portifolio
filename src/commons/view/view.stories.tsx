@@ -4,7 +4,7 @@ import { View } from '.'
 
 const meta: Meta<typeof View> = {
   component: View,
-  title: 'View'
+  title: 'Commons/View'
 }
 
 export default meta

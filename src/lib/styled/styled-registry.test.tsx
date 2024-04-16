@@ -1,8 +1,7 @@
-import { render } from '@testing-library/react'
-
+import { render } from '../test-utils'
 import { StyledRegistry } from './styled-registry'
 
-describe('<StyledComponentsRegistry />', () => {
+describe('lib/styled/registry', () => {
   it(`renders a heading`, () => {
     const { container } = render(
       <StyledRegistry>
