@@ -2,7 +2,7 @@ import React from 'react'
 import type { Preview } from '@storybook/react'
 
 import { StyledGlobal } from '../src/lib/styled/styled-global'
-import { fonts } from '../src/lib/styled/styled-registry'
+import { StyledRegistry, fonts } from '../src/lib/styled/styled-registry'
 
 const preview: Preview = {
   parameters: {
@@ -15,12 +15,14 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className={fonts}>
-        <div className="font-family">
-          <StyledGlobal />
-          <Story />
+      <StyledRegistry>
+        <div className={fonts}>
+          <div className="font-family">
+            <StyledGlobal />
+            <Story />
+          </div>
         </div>
-      </div>
+      </StyledRegistry>
     )
   ]
 }

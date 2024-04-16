@@ -1,5 +1,4 @@
-import { render } from '@testing-library/react'
-
+import { render } from '../test-utils'
 import { StyledComponentsRegistry } from './styled-components-registry'
 
 jest.mock('next/navigation', () => {
@@ -12,7 +11,7 @@ jest.mock('next/navigation', () => {
   }
 })
 
-describe('<StyledComponentsRegistry />', () => {
+describe('lib/styled/StyledComponentsRegistry', () => {
   it(`renders a heading`, () => {
     const { container } = render(
       <StyledComponentsRegistry>

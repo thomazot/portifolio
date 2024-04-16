@@ -14,7 +14,7 @@ const inter = Inter({
 
 const roboto = Roboto({
   subsets: ['latin'],
-  variable: '--font-roboto-mono',
+  variable: '--font-roboto',
   display: 'swap'
 })
 
