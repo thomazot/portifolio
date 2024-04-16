@@ -1,4 +1,4 @@
-name: Deploy GH Pages
+name: Build and Deploy Storybook
 
 on: push
 
@@ -17,6 +17,5 @@ jobs:
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
-        env:
-          BRANCH: gh-pages
-          FOLDER: storybook-static
+        with:
+          folder: storybook-static
