@@ -1,35 +1,14 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { DefaultTheme } from 'styled-components/dist/types'
 
-export type TitleSizeType = 'h1' | 'h2' | 'h3' | 'h4' | 'subtitle'
+import { Theme } from '@/configs/theme'
 
-const DictionarySize = {
-  h1: (theme: DefaultTheme) => css`
-    font-size: ${theme.heading.h1};
-  `,
-  h2: (theme: DefaultTheme) => css`
-    font-size: ${theme.heading.h2};
-  `,
-  h3: (theme: DefaultTheme) => css`
-    font-size: ${theme.heading.h3};
-  `,
-  h4: (theme: DefaultTheme) => css`
-    font-size: ${theme.heading.h4};
-  `
-}
+export type TitleSizeType = keyof typeof Theme.heading
 
 const STitle = styled.h1<{ size: TitleSizeType }>`
   ${({ theme, size }) => css`
-    ${size !== 'subtitle'
-      ? css`
-          font-weight: bold;
-          ${DictionarySize[size](theme)}
-        `
-      : css`
-          font-weight: normal;
-          font-size: ${theme.heading.subtitle};
-        `}
+    font-size: ${theme.heading[size]};
+    font-weight: ${size !== 'subtitle' ? 'bold' : 'normal'};
   `}
 `
 
