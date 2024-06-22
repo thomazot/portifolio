@@ -32,7 +32,7 @@ export default function Home() {
           </Title>
         </View>
         <View style={{ wordBreak: 'break-all' }}>
-          <Text>{'// find my profile on Github:'}</Text>
+          <Text>{'// '}find my profile on Github:</Text>
           <Text>
             <Text as="span" color="informational">
               {`const `}
