@@ -2,10 +2,10 @@
 
 import { useMutation } from '@apollo/client'
 
-import { View } from '@/commons'
-import { Login, LoginType } from '@/components'
+import { View } from '@/commons/view'
 import { Theme } from '@/configs/theme'
 import { LOGIN } from '@/services/auth'
+import { Login, LoginType } from '@/components/login'
 
 export default function Sign() {
   const [login, { error }] = useMutation(LOGIN)
@@ -19,11 +19,11 @@ export default function Sign() {
 
   return (
     <View
-      display="flex"
+      $display="flex"
       $justifyContent="center"
       $alignItems="center"
-      height="100%"
-      background={Theme.color.main}
+      $height="100%"
+      $background={Theme.color.main}
     >
       <Login onSubmit={handleSign} />
     </View>

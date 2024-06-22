@@ -1,15 +1,15 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { FieldText } from '.'
+import { FieldTextarea } from '.'
 
-const meta: Meta<typeof FieldText> = {
-  component: FieldText,
-  title: 'Forms/FieldText'
+const meta: Meta<typeof FieldTextarea> = {
+  component: FieldTextarea,
+  title: 'Forms/FieldTextarea'
 }
 
 export default meta
 
-type Story = StoryObj<typeof FieldText>
+type Story = StoryObj<typeof FieldTextarea>
 
 export const Default: Story = {
   args: {

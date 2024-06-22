@@ -71,7 +71,7 @@ export const FieldCheckbox = React.forwardRef<HTMLInputElement, FieldTextProps>(
         <SCheckbox />
         {children && <Text as="span">{children}</Text>}
         {error && (
-          <View top="100%" right="0" position="absolute">
+          <View $top="100%" $right="0" $position="absolute">
             <SError size="sm">{error.message}</SError>
           </View>
         )}
