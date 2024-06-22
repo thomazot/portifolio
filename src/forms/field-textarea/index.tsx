@@ -6,18 +6,24 @@ import styled, { css } from 'styled-components'
 import { Text } from '@/commons/text'
 import { View } from '@/commons/view'
 
-const SInput = styled.input<{ $error?: boolean }>`
+const STextarea = styled.textarea<{ $error?: boolean }>`
   ${({ theme, $error }) => css`
     width: 100%;
     border: solid 1px ${theme.color.brand.secondary};
-    line-height: 36px;
+    line-height: 1.3;
     border-radius: 2px;
-    padding: 0 16px;
+    padding: 16px;
     background: ${theme.color.main};
     color: ${theme.color['main-contrast']};
+    min-height: 100px;
 
+    &,
     &:focus {
       outline: none;
+      appearance: none;
+    }
+
+    &:focus {
       border-color: ${theme.color['main-contrast']};
       box-shadow: 0 0 3px ${theme.color['main-contrast']};
     }
@@ -46,22 +52,21 @@ type FieldTextProps = {
   children?: React.ReactNode
   error?: FieldError
   type?: 'password' | 'text'
-} & Omit<ComponentProps<'input'>, 'type'>
+} & Omit<ComponentProps<'textarea'>, 'type'>
 
-export const FieldText = React.forwardRef<HTMLInputElement, FieldTextProps>(
-  ({ children, error, type = 'text', ...props }, ref) => {
-    return (
-      <SContent>
-        {children && <Text as="span">{children}</Text>}
-        <SInput type={type} ref={ref} $error={!!error} {...props} />
-        {error && (
-          <View $top="100%" $right="0" $position="absolute">
-            <SError size="sm">{error.message}</SError>
-          </View>
-        )}
-      </SContent>
-    )
-  }
-)
-
-FieldText.displayName = 'FieldText'
+export const FieldTextarea = React.forwardRef<
+  HTMLTextAreaElement,
+  FieldTextProps
+>(({ children, error, type = 'text', ...props }, ref) => {
+  return (
+    <SContent>
+      {children && <Text as="span">{children}</Text>}
+      <STextarea ref={ref} $error={!!error} {...props} />
+      {error && (
+        <View $top="100%" $right="0" $position="absolute">
+          <SError size="sm">{error.message}</SError>
+        </View>
+      )}
+    </SContent>
+  )
+})

@@ -22,7 +22,7 @@ export const StyledGlobal = createGlobalStyle`
     }
 
     body, .font-family {
-        font-family:  var(--font-inter);
+        font-family:  var(--font-fira);
     }
 
     img {

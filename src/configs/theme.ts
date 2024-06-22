@@ -1,15 +1,27 @@
 export const Theme = {
   gap: 16,
+  rounded: {
+    md: '5px'
+  },
   color: {
-    main: '#212529',
-    informational: '#0e52a9',
+    brand: {
+      primary: '#011627',
+      secondary: '#1E2D3D',
+      tertiary: '#E5E9F0',
+      fourth: '#1C2B3A'
+    },
+    main: '#011221',
+    'main-contrast': '#607B96',
+    informational: '#4D5BCE',
     'informational-contrast': '#fff',
-    success: '#2e7816',
+    success: '#43D9AD',
     'success-contrast': '#fff',
     warning: '#f5b700',
     'warning-contrast': '#212529',
-    critical: '#cf2c21',
-    'critical-contrast': '#fff'
+    critical: '#E99287',
+    'critical-contrast': '#fff',
+    disabled: '#73828c9c',
+    'disabled-contrast': '#fff'
   },
   heading: {
     h1: '32px',
@@ -18,7 +30,10 @@ export const Theme = {
     h4: '18px',
     subtitle: '16px'
   },
-  text: {
+  size: {
+    '4xl': '46px',
+    '3xl': '32px',
+    '2xl': '24px',
     xl: '18px',
     lg: '16px',
     md: '14px',

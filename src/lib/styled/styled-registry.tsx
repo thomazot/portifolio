@@ -1,4 +1,10 @@
-import { Inter, Roboto_Mono as Roboto } from 'next/font/google'
+'use client'
+
+import {
+  Inter,
+  Roboto_Mono as Roboto,
+  Fira_Code as Fira
+} from 'next/font/google'
 import { ThemeProvider } from 'styled-components'
 
 import { Theme } from '@/configs/theme'
@@ -17,8 +23,15 @@ const roboto = Roboto({
   variable: '--font-roboto',
   display: 'swap'
 })
+const fira = Fira({
+  subsets: ['latin'],
+  variable: '--font-fira',
+  display: 'swap'
+})
 
-export const fonts = [inter, roboto].map((font) => font.variable).join(' ')
+export const fonts = [inter, roboto, fira]
+  .map((font) => font.variable)
+  .join(' ')
 
 export const StyledRegistry = ({ children }: { children: React.ReactNode }) => {
   return (
