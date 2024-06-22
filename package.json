@@ -18,7 +18,8 @@
     "format": "prettier --write \"**/src/*.ts\""
   },
   "lint-staged": {
-    "*": [
+    "src/*": [
+      "npm run format",
       "npm run lint"
     ]
   },
