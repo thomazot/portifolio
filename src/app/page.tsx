@@ -17,7 +17,7 @@ export default function Home() {
         $display="flex"
         $flexDirection="column"
         $justifyContent="space-around"
-        $height="80vh"
+        $height="50vh"
         style={{ padding: `${Theme.gap}px` }}
       >
         <View>
