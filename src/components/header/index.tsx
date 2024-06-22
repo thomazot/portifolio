@@ -1,14 +1,14 @@
 'use client'
-import { Logo } from '@/commons/logo'
-import { Button } from '@/forms/button'
-
 import { IoMenuSharp as IconMenu } from 'react-icons/io5'
 import { IoCloseSharp as IconClose } from 'react-icons/io5'
+import styled, { css } from 'styled-components'
+
+import { Logo } from '@/commons/logo'
+import { useMain } from '@/context'
+import { Button } from '@/forms/button'
+import { media } from '@/helpers/device'
 
 import { Menu } from '../menu'
-import styled, { css } from 'styled-components'
-import { media } from '@/helpers/device'
-import { useMain } from '@/context'
 
 const SHeader = styled.header`
   ${({ theme }) => css`

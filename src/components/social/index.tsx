@@ -1,17 +1,16 @@
 'use client'
 
+import {
+  FaGithub as IconGithub,
+  FaLinkedin as IconLinkedin} from 'react-icons/fa'
+import { IoMdMail as IconMail } from 'react-icons/io'
+import styled, { css } from 'styled-components'
+
 import { Link } from '@/commons/link'
 import { Text } from '@/commons/text'
 import { View } from '@/commons/view'
 import { Theme } from '@/configs/theme'
 import { media } from '@/helpers/device'
-
-import {
-  FaLinkedin as IconLinkedin,
-  FaGithub as IconGithub
-} from 'react-icons/fa'
-import { IoMdMail as IconMail } from 'react-icons/io'
-import styled, { css } from 'styled-components'
 
 const DATA = [
   {

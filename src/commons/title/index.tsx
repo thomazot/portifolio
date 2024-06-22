@@ -1,11 +1,11 @@
 'use client'
 
+import { Property } from 'csstype'
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-import { Theme } from '@/configs/theme'
-import { Property } from 'csstype'
 import { ColorType } from '@/@types'
+import { Theme } from '@/configs/theme'
 import { COLORS } from '@/helpers'
 
 export type TitleSizeType = keyof typeof Theme.heading

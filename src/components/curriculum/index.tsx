@@ -1,9 +1,10 @@
 'use client'
+import { GrDocumentPdf as IconPdf } from 'react-icons/gr'
+import { css } from 'styled-components'
+
 import { Link } from '@/commons/link'
 import { Text } from '@/commons/text'
 import { Theme } from '@/configs/theme'
-import { GrDocumentPdf as IconPdf } from 'react-icons/gr'
-import { css } from 'styled-components'
 
 export const Curriculum = () => {
   return (

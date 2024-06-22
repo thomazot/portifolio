@@ -1,5 +1,5 @@
 'use client'
-import React, { ComponentProps } from 'react'
+import React, { ComponentProps, forwardRef, ReactNode } from 'react'
 import { FieldError } from 'react-hook-form'
 import styled, { css } from 'styled-components'
 
@@ -49,24 +49,24 @@ const SError = styled(Text)`
 `
 
 type FieldTextProps = {
-  children?: React.ReactNode
+  children?: ReactNode
   error?: FieldError
-  type?: 'password' | 'text'
 } & Omit<ComponentProps<'textarea'>, 'type'>
 
-export const FieldTextarea = React.forwardRef<
-  HTMLTextAreaElement,
-  FieldTextProps
->(({ children, error, type = 'text', ...props }, ref) => {
-  return (
-    <SContent>
-      {children && <Text as="span">{children}</Text>}
-      <STextarea ref={ref} $error={!!error} {...props} />
-      {error && (
-        <View $top="100%" $right="0" $position="absolute">
-          <SError size="sm">{error.message}</SError>
-        </View>
-      )}
-    </SContent>
-  )
-})
+export const FieldTextarea = forwardRef<HTMLTextAreaElement, FieldTextProps>(
+  ({ children, error, ...props }, ref) => {
+    return (
+      <SContent>
+        {children && <Text as="span">{children}</Text>}
+        <STextarea ref={ref} $error={!!error} {...props} />
+        {error && (
+          <View $top="100%" $right="0" $position="absolute">
+            <SError size="sm">{error.message}</SError>
+          </View>
+        )}
+      </SContent>
+    )
+  }
+)
+
+FieldTextarea.displayName = 'FieldTextarea'

@@ -4,7 +4,7 @@ import { Note } from '@/components/note'
 export default function About() {
   return (
     <Note number={true} title="personal-info">
-      <p>/**</p>
+      <p>{'/**'}</p>
       <p
         style={{
           display: 'flex',

@@ -3,12 +3,12 @@
 import { useMutation } from '@apollo/client'
 
 import { View } from '@/commons/view'
+import { Login, LoginType } from '@/components/login'
 import { Theme } from '@/configs/theme'
 import { LOGIN } from '@/services/auth'
-import { Login, LoginType } from '@/components/login'
 
 export default function Sign() {
-  const [login, { error }] = useMutation(LOGIN)
+  const [login] = useMutation(LOGIN)
 
   function handleSign(data: LoginType) {
     console.log({ data })

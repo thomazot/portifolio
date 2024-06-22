@@ -1,11 +1,11 @@
 'use client'
 
-import { ColorType, SizeType } from '@/@types'
-import { COLORS, SIZES } from '@/helpers'
-import { Properties } from 'csstype'
 import LinkNext, { LinkProps as LinkNextProps } from 'next/link'
 import { HTMLAttributeAnchorTarget } from 'react'
-import styled, { RuleSet, css } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
+
+import { ColorType, SizeType } from '@/@types'
+import { COLORS, SIZES } from '@/helpers'
 
 type SLinkProps = {
   $style?: RuleSet<object>
@@ -39,7 +39,6 @@ export type LinkProps = {
   children?: React.ReactNode
   target?: HTMLAttributeAnchorTarget
   color?: ColorType
-  hoverColor?: ColorType
   size?: SizeType
   style?: RuleSet<object>
 } & LinkNextProps
@@ -47,7 +46,6 @@ export type LinkProps = {
 export const Link = ({
   children,
   color = 'currentColor',
-  hoverColor = 'currentColor',
   size = 'md',
   style,
   ...props

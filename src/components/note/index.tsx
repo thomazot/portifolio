@@ -1,9 +1,10 @@
 'use client'
 
-import { View } from '@/commons/view'
 import React from 'react'
-import styled, { css } from 'styled-components'
 import { IoCloseSharp as IconClose } from 'react-icons/io5'
+import styled, { css } from 'styled-components'
+
+import { View } from '@/commons/view'
 
 const SNote = styled.article<{ $number: boolean }>`
   ${({ theme, $number }) => css`

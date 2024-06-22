@@ -1,10 +1,9 @@
 'use client'
 
 import {
+  Fira_Code as Fira,
   Inter,
-  Roboto_Mono as Roboto,
-  Fira_Code as Fira
-} from 'next/font/google'
+  Roboto_Mono as Roboto} from 'next/font/google'
 import { ThemeProvider } from 'styled-components'
 
 import { Theme } from '@/configs/theme'

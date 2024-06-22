@@ -5,14 +5,14 @@ import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import z from 'zod'
 
-import { Button } from '@/forms/button'
-import { FieldText } from '@/forms/field-text'
-import { FieldCheckbox } from '@/forms/field-checkbox'
 import { Card } from '@/commons/card'
-import { View } from '@/commons/view'
-import { Title } from '@/commons/title'
 import { Link } from '@/commons/link'
 import { Text } from '@/commons/text'
+import { Title } from '@/commons/title'
+import { View } from '@/commons/view'
+import { Button } from '@/forms/button'
+import { FieldCheckbox } from '@/forms/field-checkbox'
+import { FieldText } from '@/forms/field-text'
 
 const SContent = styled.section`
   width: 400px;

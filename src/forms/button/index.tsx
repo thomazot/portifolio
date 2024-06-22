@@ -1,10 +1,11 @@
 'use client'
-import { ThemeType } from '@/configs/theme'
-import { media } from '@/helpers/device'
 import styled, { css } from 'styled-components'
 
+import { ThemeType } from '@/configs/theme'
+import { media } from '@/helpers/device'
+
 const SModifiedButton = {
-  transparent: (theme: ThemeType) => css`
+  transparent: (_: ThemeType) => css`
     background: transparent;
     color: currentColor;
   `,

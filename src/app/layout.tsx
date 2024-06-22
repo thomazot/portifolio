@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 
-import { ApolloWrapper } from '@/lib/apollo-wrapper'
-import { fonts, StyledRegistry } from '@/lib/styled/styled-registry'
-import { Header } from '@/components/header'
-import { Footer } from '@/components/footer'
-import { Base } from '@/components/base'
 import { View } from '@/commons/view'
+import { Base } from '@/components/base'
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
 import { Theme } from '@/configs/theme'
 import { MainProvider } from '@/context'
+import { ApolloWrapper } from '@/lib/apollo-wrapper'
+import { fonts, StyledRegistry } from '@/lib/styled/styled-registry'
 
 export const metadata: Metadata = {
   title: 'thomazot - Front End Developer - React,Javascript,Typescript',

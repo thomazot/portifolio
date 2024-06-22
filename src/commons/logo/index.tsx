@@ -1,9 +1,10 @@
 'use client'
 
-import styled, { css } from 'styled-components'
-import { Text } from '../text'
-import { Link } from '../link'
 import { usePathname } from 'next/navigation'
+import styled, { css } from 'styled-components'
+
+import { Link } from '../link'
+import { Text } from '../text'
 
 const SH1 = styled.h1`
   ${({ theme }) => css`
