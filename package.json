@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint --fix src/**",
     "prepare": "husky install",
     "test": "jest --maxWorkers=50%",
     "test:watch": "jest --watch --maxWorkers=25%",
@@ -15,12 +15,12 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "deploy-storybook": "gh-pages -d storybook-static",
-    "format": "prettier --write \"**/src/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\""
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "npm run format",
-      "npm run lint"
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "pnpm lint",
+      "pnpm format"
     ]
   },
   "dependencies": {
