@@ -110,12 +110,15 @@ export const SView = styled.div<SViewType>`
 export type ViewProps = {
   children?: React.ReactNode
   as?: React.ElementType
-  ref?: React.RefObject<HTMLDivElement>
 } & ComponentProps<'div'> &
   SViewType
 
-export const View = ({ children, as = 'div', ...props }: ViewProps) => (
-  <SView as={as} {...props}>
-    {children}
-  </SView>
+export const View = React.forwardRef<HTMLDivElement, ViewProps>(
+  ({ children, as = 'div', ...props }, ref) => (
+    <SView as={as} ref={ref} {...props}>
+      {children}
+    </SView>
+  )
 )
+
+View.displayName = 'View'

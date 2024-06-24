@@ -55,26 +55,35 @@ const STab = styled.span`
 
 type NoteProps = {
   children: React.ReactNode
-  title: string
+  title?: string
   number?: boolean
-}
+} & React.ComponentProps<'div'>
 
-export const Note = ({ children, number, title }: NoteProps) => {
-  return (
-    <View
-      $display="flex"
-      $flexDirection="column"
-      style={{
-        height: '100%'
-      }}
-    >
-      <STabs>
-        <STab>
-          {title}
-          <IconClose size={16} />
-        </STab>
-      </STabs>
-      <SNote $number={!!number}>{children}</SNote>
-    </View>
-  )
-}
+export const Note = React.forwardRef<HTMLDivElement, NoteProps>(
+  ({ children, number, title, style, ...props }, ref) => {
+    return (
+      <View
+        $display="flex"
+        $flexDirection="column"
+        ref={ref}
+        style={{
+          height: '100%',
+          ...(style ?? {})
+        }}
+        {...props}
+      >
+        {title && (
+          <STabs>
+            <STab>
+              {title}
+              <IconClose size={16} />
+            </STab>
+          </STabs>
+        )}
+        <SNote $number={!!number}>{children}</SNote>
+      </View>
+    )
+  }
+)
+
+Note.displayName = 'Note'
