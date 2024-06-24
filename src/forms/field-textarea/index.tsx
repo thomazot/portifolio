@@ -9,12 +9,12 @@ import { View } from '@/commons/view'
 const STextarea = styled.textarea<{ $error?: boolean }>`
   ${({ theme, $error }) => css`
     width: 100%;
-    border: solid 1px ${theme.color.brand.secondary};
+    border: solid 1px ${theme.color.lines};
     line-height: 1.3;
     border-radius: 2px;
     padding: 16px;
-    background: ${theme.color.main};
-    color: ${theme.color['main-contrast']};
+    background: ${theme.color['primary-one']};
+    color: ${theme.color['secondary-one']};
     min-height: 100px;
 
     &,
@@ -24,13 +24,13 @@ const STextarea = styled.textarea<{ $error?: boolean }>`
     }
 
     &:focus {
-      border-color: ${theme.color['main-contrast']};
-      box-shadow: 0 0 3px ${theme.color['main-contrast']};
+      border-color: ${theme.color['secondary-one']};
+      box-shadow: 0 0 3px ${theme.color['secondary-one']};
     }
 
     ${$error &&
     css`
-      border-color: ${theme.color.critical};
+      border-color: ${theme.color['accent-three']};
     `}
   `}
 `
@@ -44,7 +44,7 @@ const SContent = styled.label`
 
 const SError = styled(Text)`
   ${({ theme }) => css`
-    color: ${theme.color.critical};
+    color: ${theme.color['accent-three']};
   `}
 `
 
@@ -57,11 +57,17 @@ export const FieldTextarea = forwardRef<HTMLTextAreaElement, FieldTextProps>(
   ({ children, error, ...props }, ref) => {
     return (
       <SContent>
-        {children && <Text as="span">{children}</Text>}
+        {children && (
+          <Text size="code" as="span">
+            {children}
+          </Text>
+        )}
         <STextarea ref={ref} $error={!!error} {...props} />
         {error && (
-          <View $top="100%" $right="0" $position="absolute">
-            <SError size="sm">{error.message}</SError>
+          <View
+            style={{ position: 'absolute', right: 0, top: 'calc(100% + 3px)' }}
+          >
+            <SError size="code">{error.message}</SError>
           </View>
         )}
       </SContent>

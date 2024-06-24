@@ -50,9 +50,9 @@ export const FormContact = () => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'stretch',
-            flex: '1'
+            flex: '1',
+            minHeight: '100%'
           }}
-          $height="100%"
         >
           <View style={{ flex: '1' }}>
             <Note>
@@ -71,7 +71,7 @@ export const FormContact = () => {
           <SContactText
             style={{
               flex: '0 1 50%',
-              borderLeft: `solid 1px ${Theme.color.brand.secondary}`
+              borderLeft: `solid 1px ${Theme.color.lines}`
             }}
           >
             <Note number>

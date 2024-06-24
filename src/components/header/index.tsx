@@ -1,4 +1,5 @@
 'use client'
+
 import { IoMenuSharp as IconMenu } from 'react-icons/io5'
 import { IoCloseSharp as IconClose } from 'react-icons/io5'
 import styled, { css } from 'styled-components'
@@ -15,7 +16,7 @@ const SHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    border-bottom: solid 1px ${theme.color.brand.secondary};
+    border-bottom: solid 1px ${theme.color.lines};
     position: relative;
     border-radius: ${theme.rounded.md} 0 ${theme.rounded.md} 0;
 
@@ -37,7 +38,10 @@ export const Header = () => {
     <SHeader>
       <Logo />
       <Menu />
-      <SButton transparent onClick={() => setOpenMenu((openMenu) => !openMenu)}>
+      <SButton
+        buttonTheme="transparent"
+        onClick={() => setOpenMenu((openMenu) => !openMenu)}
+      >
         {openMenu ? <IconClose size="30" /> : <IconMenu size="30" />}
       </SButton>
     </SHeader>

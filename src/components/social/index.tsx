@@ -38,16 +38,16 @@ const SLink = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
-    border-left: solid 1px ${theme.color.brand.secondary};
-    padding: 0 ${theme.gap}px;
-    color: ${theme.color['main-contrast']};
+    border-left: solid 1px ${theme.color.lines};
+    padding: 0 ${theme.gap};
+    color: ${theme.color['secondary-one']};
 
     span {
       display: none;
     }
 
     &:hover {
-      color: ${theme.color.brand.tertiary};
+      color: ${theme.color['secondary-four']};
     }
   `}
 `
@@ -64,11 +64,11 @@ const SSocial = styled.section`
         margin-left: 0;
       }
       a:nth-last-child(2) {
-        border-right: solid 1px ${theme.color.brand.secondary};
+        border-right: solid 1px ${theme.color.lines};
       }
       :last-child {
         margin-left: auto;
-        gap: ${theme.gap}px;
+        gap: ${theme.gap};
 
         span {
           display: block;
@@ -103,7 +103,7 @@ const SSocial = styled.section`
 
 export const Social = () => (
   <SSocial>
-    <Text style={{ padding: `${Theme.gap}px` }}>find me in:</Text>
+    <Text style={{ padding: Theme.gap }}>find me in:</Text>
     {DATA.map(({ icon, ...props }, index) => (
       <SLink key={index} {...props}>
         <View as="span">{props.title}</View>

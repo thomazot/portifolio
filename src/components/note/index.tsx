@@ -9,7 +9,7 @@ const SNote = styled.article<{ $number: boolean }>`
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: ${theme.gap}px;
+    padding: ${theme.gap};
     max-height: max-content;
     overflow-y: auto;
     height: 100%;

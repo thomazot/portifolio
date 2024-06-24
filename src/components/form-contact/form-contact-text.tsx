@@ -14,88 +14,88 @@ export const FormContactText = () => {
   return (
     <View style={{ maxWidth: '470px', wordBreak: 'break-all' }}>
       <p>
-        <Text as="span" color="informational">
+        <Text as="span" color="accent-four">
           {`const `}
         </Text>
-        <Text as="span" color="success">
+        <Text as="span" color="secondary-three">
           button
         </Text>
-        <Text as="span" color="informational">
+        <Text as="span" color="accent-four">
           {` = `}
         </Text>
-        <Text as="span" color="main-contrast">
+        <Text as="span" color="accent-three">
           {` document.querySelector(`}
         </Text>
-        <Text as="span" color="critical">
+        <Text as="span" color="secondary-one">
           {`'#sendBtn'`}
         </Text>
-        <Text as="span" color="main-contrast">
+        <Text as="span" color="accent-three">
           {`);`}
         </Text>
       </p>
       <p> &nbsp;</p>
       <p>
-        <Text as="span" color="informational">
+        <Text as="span" color="accent-four">
           {`const `}
         </Text>
-        <Text as="span" color="success">
+        <Text as="span" color="secondary-three">
           message
         </Text>
-        <Text as="span" color="informational">
+        <Text as="span" color="accent-four">
           {` = `}
         </Text>
-        <Text as="span" color="main-contrast">
+        <Text as="span" color="accent-three">
           {` {`}
         </Text>
       </p>
       <p>
-        <Text as="span" style={{ paddingLeft: '16px' }} color="success">
+        <Text as="span" style={{ paddingLeft: '16px' }} color="secondary-three">
           name:
         </Text>
-        <Text as="span" color="critical">{` "${name}"`}</Text>
+        <Text as="span" color="secondary-one">{` "${name}"`}</Text>
       </p>
       <p>
-        <Text as="span" style={{ paddingLeft: '16px' }} color="success">
+        <Text as="span" style={{ paddingLeft: '16px' }} color="secondary-three">
           email:
         </Text>
-        <Text as="span" color="critical">{` "${email}"`}</Text>
+        <Text as="span" color="secondary-one">{` "${email}"`}</Text>
       </p>
       <p>
-        <Text as="span" style={{ paddingLeft: '16px' }} color="success">
+        <Text as="span" style={{ paddingLeft: '16px' }} color="secondary-three">
           message:
         </Text>
-        <Text as="span" color="critical">{` "${message}"`}</Text>
+        <Text as="span" color="secondary-one">{` "${message}"`}</Text>
       </p>
       <p>
-        <Text as="span" color="main-contrast">
+        <Text as="span" color="accent-three">
           {`};`}
         </Text>
       </p>
       <p>&nbsp;</p>
       <p>
-        <Text as="span" color="main-contrast">
+        <Text as="span" color="accent-three">
           {` button.addEventListener(`}
         </Text>
-        <Text as="span" color="critical">
+        <Text as="span" color="secondary-one">
           {`'click'`}
         </Text>
-        <Text as="span" color="main-contrast">
+        <Text as="span" color="accent-three">
           {`, ()`}
         </Text>
-        <Text as="span" color="informational">
+        <Text as="span" color="accent-four">
           {` => `}
         </Text>
-        <Text as="span" color="main-contrast">
+        <Text as="span" color="accent-three">
           {`{`}
         </Text>
       </p>
       <p>
-        <Text as="span" style={{ paddingLeft: '16px' }} color="main-contrast">
+        <Text as="span" style={{ paddingLeft: '16px' }} color="accent-three">
           {` form.send(message);`}
         </Text>
       </p>
       <p>
-        <Text as="span" color="main-contrast">
+        <Text as="span" color="accent-three">
           {'});'}
         </Text>
       </p>

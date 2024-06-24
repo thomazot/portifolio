@@ -3,7 +3,8 @@
 import {
   Fira_Code as Fira,
   Inter,
-  Roboto_Mono as Roboto} from 'next/font/google'
+  Roboto_Mono as Roboto
+} from 'next/font/google'
 import { ThemeProvider } from 'styled-components'
 
 import { Theme } from '@/configs/theme'
@@ -35,8 +36,10 @@ export const fonts = [inter, roboto, fira]
 export const StyledRegistry = ({ children }: { children: React.ReactNode }) => {
   return (
     <StyledComponentsRegistry>
-      <StyledGlobal />
-      <ThemeProvider theme={Theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={Theme}>
+        <StyledGlobal />
+        {children}
+      </ThemeProvider>
     </StyledComponentsRegistry>
   )
 }

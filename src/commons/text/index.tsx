@@ -17,15 +17,15 @@ const SText = styled.p<{ $size: SizeType; $color: ColorType }>`
 type TextProps = {
   children?: React.ReactNode
   size?: SizeType
-  as?: keyof JSX.IntrinsicElements
+  as?: React.ElementType
   color?: ColorType
 } & ComponentProps<'p'>
 
 export const Text = ({
   children,
   as = 'p',
-  size = 'md',
-  color = 'currentColor',
+  size = 'body',
+  color = 'current-color',
   ...props
 }: TextProps) => (
   <SText as={as} $size={size} $color={color} {...props}>

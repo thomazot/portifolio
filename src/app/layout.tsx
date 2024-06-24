@@ -4,7 +4,6 @@ import { View } from '@/commons/view'
 import { Base } from '@/components/base'
 import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
-import { Theme } from '@/configs/theme'
 import { MainProvider } from '@/context'
 import { ApolloWrapper } from '@/lib/apollo-wrapper'
 import { fonts, StyledRegistry } from '@/lib/styled/styled-registry'
@@ -29,12 +28,11 @@ export default function RootLayout({
               <Base>
                 <Header />
                 <View
-                  $display="flex"
-                  $alignItems="stretch"
                   as="main"
                   style={{
+                    display: 'flex',
+                    alignItems: 'stretch',
                     flex: '1',
-                    color: Theme.color['main-contrast'],
                     overflow: 'hidden'
                   }}
                 >

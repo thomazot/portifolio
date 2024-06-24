@@ -1,44 +1,65 @@
 export const Theme = {
-  gap: 16,
+  gap: '16px',
   rounded: {
-    md: '5px'
+    md: '0.5em'
   },
   color: {
-    brand: {
-      primary: '#011627',
-      secondary: '#1E2D3D',
-      tertiary: '#E5E9F0',
-      fourth: '#1C2B3A'
-    },
-    main: '#011221',
-    'main-contrast': '#607B96',
-    informational: '#4D5BCE',
-    'informational-contrast': '#fff',
-    success: '#43D9AD',
-    'success-contrast': '#fff',
-    warning: '#f5b700',
-    'warning-contrast': '#212529',
-    critical: '#E99287',
-    'critical-contrast': '#fff',
-    disabled: '#73828c9c',
-    'disabled-contrast': '#fff'
+    'primary-one': '#01080E',
+    'primary-two': '#011627',
+    'primary-three': '#011221',
+
+    'secondary-one': '#607B96',
+    'secondary-two': '#3C9D93',
+    'secondary-three': '#4D5BCE',
+    'secondary-four': '#FFFFFF',
+
+    'accent-one': '#FEA55F',
+    'accent-two': '#43D9AD',
+    'accent-three': '#E99287',
+    'accent-four': '#C98BDF',
+
+    lines: '#1E2D3D',
+
+    'gradients-one': '#4D5BCE',
+    'gradients-two': '#43D9AD',
+
+    'current-color': 'currentColor'
   },
-  heading: {
-    h1: '32px',
-    h2: '28px',
-    h3: '24px',
-    h4: '18px',
-    subtitle: '16px'
+  button: {
+    primary: {
+      background: '#FEA55F',
+      color: '#01080E',
+      borderRadius: '0.5em',
+      '&:hover': {
+        background: '#FFAC6B',
+        color: '#01080E'
+      }
+    },
+    default: {
+      background: '#1C2B3A',
+      color: '#fff',
+      borderRadius: '0.5em',
+      '&:hover': {
+        background: '#263B50',
+        color: '#fff'
+      }
+    },
+    ghost: {
+      background: 'none',
+      color: '#fff',
+      border: 'solid 1px #fff',
+      borderRadius: '0.5em',
+      '&:hover': {
+        opacity: '0.5'
+      }
+    }
   },
   size: {
-    '4xl': '46px',
-    '3xl': '32px',
-    '2xl': '24px',
-    xl: '18px',
-    lg: '16px',
-    md: '14px',
-    sm: '12px',
-    xs: '10px'
+    title: '32px',
+    subtitle: '18px',
+    body: '14px',
+    lables: '12px',
+    code: '10px'
   }
 }
 

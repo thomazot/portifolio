@@ -69,33 +69,33 @@ export const Login = ({
     <SContent>
       <Card>
         <SForm onSubmit={handleSubmit(handleLogin)}>
-          <View $display="flex" $flexDirection="column" $gap="16px">
-            <Title>Login</Title>
+          <View>
+            <Title>_login</Title>
             <FieldText {...register('identifier')} error={errors?.identifier}>
-              Username:
+              _username:
             </FieldText>
             <FieldText
               {...register('password')}
               type="password"
               error={errors?.password}
             >
-              Password:
+              _password:
             </FieldText>
-            <View $display="flex" $justifyContent="space-between">
+            <View>
               <FieldCheckbox {...register('remember')}>
-                Remember me
+                _remember me
               </FieldCheckbox>
               <Link href={forgotPassword}>
-                <Text as="span">Forgot password?</Text>
+                <Text as="span">_forgot password?</Text>
               </Link>
             </View>
-            <View $display="flex">
+            <View>
               <Button
                 disabled={disabledSubmitButton}
                 type="submit"
                 style={{ marginLeft: 'auto' }}
               >
-                Login
+                submit-login
               </Button>
             </View>
           </View>

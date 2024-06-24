@@ -16,13 +16,19 @@ export const StyledGlobal = createGlobalStyle`
     }
 
     body,
-    html {
+    html, #storybook-root {
       height: 100%;
       position: relative;
     }
 
     body, .font-family {
         font-family:  var(--font-fira);
+    }
+
+    body {
+      background: ${(props) => props.theme.color['primary-one']};
+      color: ${(props) => props.theme.color['secondary-one']};
+      font-size: ${(props) => props.theme.size.body};
     }
 
     img {

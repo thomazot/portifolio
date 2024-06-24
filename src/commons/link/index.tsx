@@ -16,6 +16,7 @@ type SLinkProps = {
 const SLink = styled(LinkNext)<SLinkProps>`
   ${({ $style, $fontSize, $color }) => css`
     text-decoration: none;
+    font-weight: normal;
     ${$style && $style}
     ${$color
       ? css`
@@ -45,8 +46,8 @@ export type LinkProps = {
 
 export const Link = ({
   children,
-  color = 'currentColor',
-  size = 'md',
+  color = 'current-color',
+  size = 'body',
   style,
   ...props
 }: LinkProps) => (

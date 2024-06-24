@@ -16,8 +16,24 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <StyledRegistry>
-        <div className={fonts}>
-          <div className="font-family">
+        <div
+          style={{
+            minHeight: '100%',
+            display: 'flex',
+            flexDirection: 'column'
+          }}
+          className={fonts}
+        >
+          <div
+            className="font-family"
+            style={{
+              minHeight: '100%',
+              flex: '1',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
+          >
             <StyledGlobal />
             <Story />
           </div>

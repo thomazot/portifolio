@@ -80,14 +80,18 @@ export const FormContactForm = ({
           <FieldTextarea {...register('message')} error={errors?.message}>
             _message
           </FieldTextarea>
-          <Button loading={loading} style={{ width: '50%', marginTop: '16px' }}>
-            submit-message
-          </Button>
+          <View>
+            <Button loading={loading} style={{ marginTop: '16px' }}>
+              submit-message
+            </Button>
+          </View>
         </>
       )}
       {success === true && (
         <View style={{ textAlign: 'center' }}>
-          <Title color="tertiary">Thank you! 🤘</Title>
+          <Title color="secondary-four" size="subtitle">
+            Thank you! 🤘
+          </Title>
           <Text as="div">
             Your message has been accepted. You will recieve answer really soon!
           </Text>
@@ -95,7 +99,7 @@ export const FormContactForm = ({
           <Button
             onClick={handleReset}
             type="button"
-            style={{ width: '50%', marginTop: '16px' }}
+            style={{ marginTop: '16px' }}
           >
             send-new-message
           </Button>
@@ -103,7 +107,9 @@ export const FormContactForm = ({
       )}
       {error === true && (
         <View style={{ textAlign: 'center' }}>
-          <Title color="tertiary">Sorry!</Title>
+          <Title color="secondary-four" size="subtitle">
+            Sorry!
+          </Title>
           <Text as="div">
             There was a problem with shipping. Try again later!
           </Text>

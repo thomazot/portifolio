@@ -11,7 +11,7 @@ const SH1 = styled.h1`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: ${theme.gap}px;
+    padding: calc(${theme.gap} / 2);
     font-weight: 400;
     width: 100%;
     max-width: 250px;
@@ -26,14 +26,10 @@ export const Logo = () => {
     <SH1 as={!hasHome ? 'h2' : 'h1'}>
       {!hasHome ? (
         <Link href="/">
-          <Text size="lg" as="span">
-            thomazot
-          </Text>
+          <Text as="span">thomazot</Text>
         </Link>
       ) : (
-        <Text size="lg" as="span">
-          thomazot
-        </Text>
+        <Text as="span">thomazot</Text>
       )}
     </SH1>
   )

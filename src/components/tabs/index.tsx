@@ -8,7 +8,7 @@ import { View } from '@/commons/view'
 
 const STabs = styled.div`
   ${({ theme }) => css`
-    border-bottom: solid 1px ${theme.color.brand.secondary};
+    border-bottom: solid 1px ${theme.color.lines};
   `}
 `
 const STab = styled.span`
@@ -16,9 +16,9 @@ const STab = styled.span`
     display: inline-flex;
     justify-content: flex-start;
     align-items: center;
-    gap: ${theme.gap}px;
-    border-right: solid 1px ${theme.color.brand.secondary};
-    padding: ${theme.gap}px;
+    gap: ${theme.gap};
+    border-right: solid 1px ${theme.color.lines};
+    padding: ${theme.gap};
   `}
 `
 
@@ -31,10 +31,10 @@ export const Tabs = React.forwardRef<HTMLDivElement, NoteProps>(
   ({ children, title, style, ...props }, ref) => {
     return (
       <View
-        $display="flex"
-        $flexDirection="column"
         ref={ref}
         style={{
+          display: 'flex',
+          flexDirection: 'column',
           height: '100%',
           ...(style ?? {})
         }}

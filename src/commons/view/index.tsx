@@ -1,91 +1,15 @@
 'use client'
 
-import { Property } from 'csstype'
 import React, { ComponentProps } from 'react'
 import styled, { css } from 'styled-components'
 
 type SViewType = {
-  $position?: Property.Position
-  $top?: Property.Top
-  $left?: Property.Left
-  $right?: Property.Right
-  $bottom?: Property.Bottom
-  $display?: Property.Display
-  $justifyContent?: Property.JustifyContent
-  $flexDirection?: Property.FlexDirection
-  $alignItems?: Property.AlignItems
-  $gap?: Property.Gap
-  $height?: Property.Height
-  $background?: Property.Background
-  $radial?: 'true' | 'false'
+  radial?: boolean
 }
 
-export const SView = styled.div<SViewType>`
-  ${({
-    $position,
-    $top,
-    $bottom,
-    $left,
-    $right,
-    $display,
-    $justifyContent,
-    $flexDirection,
-    $alignItems,
-    $height,
-    $gap,
-    $background,
-    $radial
-  }) => css`
-    ${$display &&
-    css`
-      display: ${$display};
-    `}
-    ${$justifyContent &&
-    css`
-      justify-content: ${$justifyContent};
-    `}
-    ${$flexDirection &&
-    css`
-      flex-direction: ${$flexDirection};
-    `}
-    ${$alignItems &&
-    css`
-      align-items: ${$alignItems};
-    `}
-    ${$height &&
-    css`
-      min-height: ${$height};
-    `}
-    ${$gap &&
-    css`
-      gap: ${$gap};
-    `}
-    ${$background &&
-    css`
-      background: ${$background};
-    `}
-    ${$position &&
-    css`
-      position: ${$position};
-    `}
-    ${$top &&
-    css`
-      top: ${$top};
-    `}
-    ${$bottom &&
-    css`
-      bottom: ${$bottom};
-    `}
-    ${$left &&
-    css`
-      left: ${$left};
-    `}
-    ${$right &&
-    css`
-      right: ${$right};
-    `}
-    ${$radial === 'true' &&
-    $background &&
+export const SView = styled.div<{ $radial: boolean }>`
+  ${({ theme, $radial }) => css`
+    ${$radial &&
     css`
       background:
         radial-gradient(
@@ -100,7 +24,7 @@ export const SView = styled.div<SViewType>`
             transparent
           )
           0%,
-        ${$background};
+        ${theme.color['primary-two']};
     `}
     list-style: none;
     color: currentColor;
@@ -114,8 +38,8 @@ export type ViewProps = {
   SViewType
 
 export const View = React.forwardRef<HTMLDivElement, ViewProps>(
-  ({ children, as = 'div', ...props }, ref) => (
-    <SView as={as} ref={ref} {...props}>
+  ({ children, as = 'div', radial, ...props }, ref) => (
+    <SView $radial={radial} as={as} ref={ref} {...props}>
       {children}
     </SView>
   )

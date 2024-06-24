@@ -6,7 +6,7 @@ import { Social } from '../social'
 
 const SFooter = styled.footer`
   ${({ theme }) => css`
-    border-top: solid 1px ${theme.color.brand.secondary};
+    border-top: solid 1px ${theme.color.lines};
   `}
 `
 

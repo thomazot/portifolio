@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import styled, { css,RuleSet } from 'styled-components'
+import styled, { css, RuleSet } from 'styled-components'
 
 import { Link } from '@/commons/link'
 import { View } from '@/commons/view'
@@ -30,13 +30,13 @@ const DATA_MENU = [
 ]
 
 const SLink: RuleSet<object> = css`
-  padding: ${Theme.gap}px;
+  padding: ${Theme.gap};
   position: relative;
 
   &:after {
     content: '';
     height: 2px;
-    background: ${Theme.color.warning};
+    background: ${Theme.color['accent-one']};
     width: 100%;
     max-height: 0;
     position: absolute;
@@ -49,14 +49,14 @@ const SLink: RuleSet<object> = css`
 
 const SNav = styled.nav<{ $open: boolean }>`
   ${({ theme, $open }) => css`
-    border: solid 1px ${theme.color.brand.secondary};
+    border: solid 1px ${theme.color.lines};
     width: 100%;
     max-width: 300px;
     position: absolute;
     top: 100%;
     height: calc(100vh - 154px);
-    background: ${theme.color.brand.primary};
-    transform: translateX(-${theme.gap}px);
+    background: ${theme.color['primary-two']};
+    transform: translateX(-${theme.gap});
     opacity: 0;
     transition: all 200ms ease-in-out;
     visibility: hidden;
@@ -64,11 +64,11 @@ const SNav = styled.nav<{ $open: boolean }>`
 
     a {
       display: block;
-      border-bottom: solid 1px ${theme.color.brand.secondary};
+      border-bottom: solid 1px ${theme.color.lines};
     }
 
     [data-actived='true'] {
-      box-shadow: inset 2px 0 0 ${theme.color.warning};
+      box-shadow: inset 2px 0 0 ${theme.color['accent-one']};
     }
 
     ${$open &&
@@ -89,7 +89,7 @@ const SNav = styled.nav<{ $open: boolean }>`
       visibility: visible;
 
       [data-actived='true'] {
-        box-shadow: inset 0 -2px 0 ${theme.color.warning};
+        box-shadow: inset 0 -2px 0 ${theme.color['accent-one']};
       }
 
       a {
@@ -99,8 +99,8 @@ const SNav = styled.nav<{ $open: boolean }>`
         border-bottom: none;
         line-height: 1;
         box-shadow:
-          1px 0 0 ${theme.color.brand.secondary},
-          -1px 0 0 ${theme.color.brand.secondary};
+          1px 0 0 ${theme.color.lines},
+          -1px 0 0 ${theme.color.lines};
         height: 100%;
 
         &:hover {
@@ -144,7 +144,7 @@ export const Menu = () => {
             <Link
               onClick={handleCloseMenu}
               style={SLink}
-              color="tertiary"
+              color="secondary-one"
               {...props}
             >
               {label}

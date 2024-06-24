@@ -7,42 +7,46 @@ import { Theme } from '@/configs/theme'
 export default function Home() {
   return (
     <View
-      $display="flex"
-      $justifyContent="center"
-      $alignItems="center"
-      $height="100%"
-      style={{ overflow: 'auto', maxHeight: '100%' }}
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        overflow: 'auto',
+        height: '100%'
+      }}
     >
       <View
-        $display="flex"
-        $flexDirection="column"
-        $justifyContent="space-around"
-        $height="50vh"
-        style={{ padding: `${Theme.gap}px` }}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-around',
+          minHeight: '50vh',
+          padding: Theme.gap
+        }}
       >
         <View>
-          <Title weight="normal" color="tertiary" size="h4">
+          <Title size="body" as="h2">
             Hi all. I am
           </Title>
-          <Title weight="normal" color="tertiary" size="h1">
+          <Title size="title" as="h1">
             Thomaz Toyama
           </Title>
-          <Title weight="normal" size="h4" color="success">
+          <Title color="secondary-three" size="subtitle" as="h3">
             &gt; Front-end developer
           </Title>
         </View>
         <View style={{ wordBreak: 'break-all' }}>
           <Text>{'// '}find my profile on Github:</Text>
           <Text>
-            <Text as="span" color="informational">
+            <Text as="span" color="secondary-three">
               {`const `}
             </Text>
-            <Text as="span" color="success">
+            <Text as="span" color="accent-two">
               {'githubLink '}
             </Text>
             {'= '}
             <Link href="https://github.com/thomazot">
-              <Text as="span" color="critical">
+              <Text as="span" color="accent-three">
                 “https://github.com/thomazot”
               </Text>
             </Link>

@@ -2,31 +2,17 @@
 import styled, { css } from 'styled-components'
 
 import { ThemeType } from '@/configs/theme'
-import { media } from '@/helpers/device'
+
+type ButtonThemeType = 'default' | 'primary' | 'ghost' | 'transparent'
 
 const SModifiedButton = {
   transparent: (_: ThemeType) => css`
     background: transparent;
     color: currentColor;
   `,
-  default: (theme: ThemeType) => css`
-    background: ${theme.color.brand.fourth};
-    color: ${theme.color.brand.tertiary};
-    border-radius: 5px;
-
-    &:disabled {
-      background: ${theme.color.disabled};
-      color: ${theme.color['disabled-contrast']};
-    }
-
-    ${media.lg(css`
-      &:hover {
-        background: ${theme.color.main};
-        border-color: ${theme.color['main-contrast']};
-        box-shadow: 0 0 3px ${theme.color['main-contrast']};
-      }
-    `)}
-  `,
+  default: (theme: ThemeType) => css(theme.button.default),
+  primary: (theme: ThemeType) => css(theme.button.primary),
+  ghost: (theme: ThemeType) => css(theme.button.ghost),
   loading: (_: ThemeType) => css`
     @keyframes pulse {
       0% {
@@ -54,18 +40,17 @@ const SModifiedButton = {
   `
 }
 
-const SButton = styled.button<{ $transparent: boolean; $loading?: boolean }>`
-  ${({ theme, $transparent, $loading }) => css`
-    ${$transparent
-      ? SModifiedButton.transparent(theme)
-      : SModifiedButton.default(theme)}
+const SButton = styled.button<{
+  $loading?: boolean
+  $buttonTheme: ButtonThemeType
+}>`
+  ${({ theme, $buttonTheme, $loading }) => css`
+    border: 0;
+    padding: 8px 16px;
 
+    ${SModifiedButton?.[$buttonTheme] && SModifiedButton[$buttonTheme](theme)}
     ${$loading === true && SModifiedButton.loading(theme)}
 
-    border: solid 1px ${theme.color.brand.secondary};
-    border: 0;
-    padding: 8px;
-    font-size: ${theme.size.md};
     cursor: pointer;
 
     &:disabled {
@@ -77,17 +62,17 @@ const SButton = styled.button<{ $transparent: boolean; $loading?: boolean }>`
 
 type ButtonProps = {
   children: React.ReactNode
-  transparent?: boolean
   loading?: boolean
+  buttonTheme?: ButtonThemeType
 } & React.ComponentProps<'button'>
 
 export const Button = ({
   children,
-  transparent,
   loading,
+  buttonTheme = 'default',
   ...props
 }: ButtonProps) => (
-  <SButton {...props} $transparent={!!transparent} $loading={loading}>
+  <SButton {...props} $buttonTheme={buttonTheme} $loading={loading}>
     {children}
   </SButton>
 )

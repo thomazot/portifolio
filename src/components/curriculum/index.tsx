@@ -13,14 +13,12 @@ export const Curriculum = () => {
         display: flex;
         align-items: center;
         &:hover {
-          color: ${Theme.color.brand.tertiary};
+          color: ${Theme.color['secondary-four']};
         }
       `}
       href=""
     >
-      <Text as="span" size="sm">
-        CV:
-      </Text>
+      <Text as="span">CV:</Text>
       <IconPdf size={20} />
     </Link>
   )
