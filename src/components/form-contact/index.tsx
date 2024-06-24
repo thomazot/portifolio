@@ -10,6 +10,7 @@ import { Theme } from '@/configs/theme'
 import { media } from '@/helpers/device'
 
 import { Note } from '../note'
+import { Tabs } from '../tabs'
 import { FormContactForm } from './form-contact-form'
 import { FormContactText } from './form-contact-text'
 
@@ -42,50 +43,52 @@ export const FormContact = () => {
   })
 
   return (
-    <FormProvider {...formMethods}>
-      <View
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'stretch',
-          flex: '1'
-        }}
-        $height="100%"
-      >
-        <View style={{ flex: '1' }}>
-          <Note title="contacts">
-            <View
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                flex: '1'
-              }}
-            >
-              <FormContactForm formMethods={formMethods} />
-            </View>
-          </Note>
-        </View>
-        <SContactText
+    <Tabs title="contacts">
+      <FormProvider {...formMethods}>
+        <View
           style={{
-            flex: '0 1 50%',
-            borderLeft: `solid 1px ${Theme.color.brand.secondary}`
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'stretch',
+            flex: '1'
           }}
+          $height="100%"
         >
-          <Note number>
-            <View
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                flex: '1'
-              }}
-            >
-              <FormContactText />
-            </View>
-          </Note>
-        </SContactText>
-      </View>
-    </FormProvider>
+          <View style={{ flex: '1' }}>
+            <Note>
+              <View
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  flex: '1'
+                }}
+              >
+                <FormContactForm formMethods={formMethods} />
+              </View>
+            </Note>
+          </View>
+          <SContactText
+            style={{
+              flex: '0 1 50%',
+              borderLeft: `solid 1px ${Theme.color.brand.secondary}`
+            }}
+          >
+            <Note number>
+              <View
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  flex: '1'
+                }}
+              >
+                <FormContactText />
+              </View>
+            </Note>
+          </SContactText>
+        </View>
+      </FormProvider>
+    </Tabs>
   )
 }
