@@ -7,14 +7,25 @@ import { Theme } from '@/configs/theme'
 export default function Error() {
   return (
     <View
-      $display="flex"
-      $justifyContent="center"
-      $alignItems="center"
-      $height="100%"
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100%'
+      }}
     >
-      <View $display="flex" $alignItems="center" $gap={`${Theme.gap}px`}>
-        <Title weight={600}>404</Title>
-        <Title size="subtitle" weight={400}>
+      <View
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: Theme.gap
+        }}
+      >
+        <Title size="subtitle" as="h1">
+          404
+        </Title>
+        <Title size="subtitle" as="h2">
           This page could not be found.
         </Title>
       </View>
