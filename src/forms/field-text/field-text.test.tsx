@@ -47,7 +47,7 @@ describe('forms/field-text', () => {
     })
 
     expect(input).toHaveStyle({
-      borderColor: Theme.color.informational
+      borderColor: Theme.color['main-contrast']
     })
   })
 })

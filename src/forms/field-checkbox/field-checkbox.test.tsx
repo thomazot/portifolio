@@ -1,16 +1,14 @@
-import userEvent from '@testing-library/user-event'
 import { FieldError } from 'react-hook-form'
 
-import { Theme } from '@/configs/theme'
-import { render, screen, waitFor } from '@/lib/test-utils'
+import { render, screen } from '@/lib/test-utils'
 
 import { FieldCheckbox } from '.'
 
-describe('forms/field-text', () => {
-  it('should render field text', () => {
-    render(<FieldCheckbox />)
+describe('forms/field-checkbox', () => {
+  it('should render field checkebox', () => {
+    render(<FieldCheckbox>Username</FieldCheckbox>)
 
-    const input = screen.getByRole('textbox')
+    const input = screen.getByRole('checkbox', { hidden: true })
 
     expect(input).toBeInTheDocument()
   })
@@ -31,23 +29,5 @@ describe('forms/field-text', () => {
     render(<FieldCheckbox error={error}>Username</FieldCheckbox>)
 
     expect(screen.getByText('required field')).toBeInTheDocument()
-  })
-
-  it('should in focus color border informational', () => {
-    render(<FieldCheckbox />)
-
-    const input = screen.getByRole('textbox')
-    const value = 'Hello world!!'
-
-    userEvent.type(input, value)
-    input.focus()
-
-    waitFor(() => {
-      expect(input).toHaveValue(value)
-    })
-
-    expect(input).toHaveStyle({
-      borderColor: Theme.color.informational
-    })
   })
 })

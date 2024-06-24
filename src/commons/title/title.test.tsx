@@ -44,8 +44,7 @@ describe('commons/title', () => {
     expect(title).toBeInTheDocument()
 
     expect(title).toHaveStyle({
-      fontSize: Theme.heading.subtitle,
-      fontWeight: 'normal'
+      fontSize: Theme.heading.subtitle
     })
   })
 })

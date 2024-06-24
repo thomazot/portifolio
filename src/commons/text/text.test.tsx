@@ -1,10 +1,11 @@
+import { SizeType } from '@/@types'
 import { Theme } from '@/configs/theme'
 import { render, screen } from '@/lib/test-utils'
 
-import { Text, TextSizeType } from '.'
+import { Text } from '.'
 
-const labelSize = Object.keys(Theme.text).map(
-  (labelTextSize) => labelTextSize as TextSizeType
+const labelSize = Object.keys(Theme.size).map(
+  (labelTextSize) => labelTextSize as SizeType
 )
 
 describe('commons/text', () => {
@@ -15,7 +16,7 @@ describe('commons/text', () => {
     expect(text).toBeInTheDocument()
   })
 
-  it.each(labelSize.map((labelSize) => [labelSize, Theme.text[labelSize]]))(
+  it.each(labelSize.map((labelSize) => [labelSize, Theme.size[labelSize]]))(
     'should size %s font-size %s',
     (labelSize, fontSize) => {
       render(<Text size={labelSize}>Text example</Text>)

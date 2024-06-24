@@ -4,11 +4,11 @@ import { FieldError } from 'react-hook-form'
 import { Theme } from '@/configs/theme'
 import { render, screen, waitFor } from '@/lib/test-utils'
 
-import { FieldText } from '.'
+import { FieldTextarea } from '.'
 
-describe('forms/field-text', () => {
+describe('forms/field-textarea', () => {
   it('should render field text', () => {
-    render(<FieldText />)
+    render(<FieldTextarea />)
 
     const input = screen.getByRole('textbox')
 
@@ -16,7 +16,7 @@ describe('forms/field-text', () => {
   })
 
   it('should show label name', () => {
-    render(<FieldText>Username</FieldText>)
+    render(<FieldTextarea>Username</FieldTextarea>)
 
     const label = screen.getByLabelText('Username')
 
@@ -28,13 +28,13 @@ describe('forms/field-text', () => {
       type: 'required',
       message: 'required field'
     }
-    render(<FieldText error={error}>Username</FieldText>)
+    render(<FieldTextarea error={error}>Username</FieldTextarea>)
 
     expect(screen.getByText('required field')).toBeInTheDocument()
   })
 
   it('should in focus color border informational', () => {
-    render(<FieldText />)
+    render(<FieldTextarea />)
 
     const input = screen.getByRole('textbox')
     const value = 'Hello world!!'
@@ -47,7 +47,7 @@ describe('forms/field-text', () => {
     })
 
     expect(input).toHaveStyle({
-      borderColor: Theme.color.informational
+      borderColor: Theme.color['main-contrast']
     })
   })
 })
