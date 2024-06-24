@@ -15,7 +15,7 @@ jobs:
 
       - name: Install and Build 
         run: |
-          npm install --frozen-lockfile
+          npm install
           npm run build-storybook
 
       - name: Deploy
