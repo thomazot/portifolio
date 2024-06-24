@@ -2,7 +2,8 @@
 
 import {
   FaGithub as IconGithub,
-  FaLinkedin as IconLinkedin} from 'react-icons/fa'
+  FaLinkedin as IconLinkedin
+} from 'react-icons/fa'
 import { IoMdMail as IconMail } from 'react-icons/io'
 import styled, { css } from 'styled-components'
 
@@ -88,13 +89,13 @@ const SSocial = styled.section`
           transition: all 300ms ease-in-out;
           white-space: nowrap;
         }
-        &:hover {
+        /* &:hover {
           gap: ${theme.gap}px;
           span {
             max-width: 100%;
             visibility: visible;
           }
-        }
+        } */
       }
     `)}
   `}
