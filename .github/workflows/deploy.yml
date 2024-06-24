@@ -22,6 +22,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          token: ${{ secrets.STORYBOOK_TOKEN }}
+          token: ${{ secrets.TOKEN_GITHUB }}
           folder: storybook-static
           clean: true
