@@ -86,7 +86,7 @@ export const FormContactText = () => {
           {` => `}
         </Text>
         <Text as="span" color="main-contrast">
-          {`{}`}
+          {`{`}
         </Text>
       </p>
       <p>
