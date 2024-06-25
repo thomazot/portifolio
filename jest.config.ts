@@ -20,7 +20,7 @@ const config: Config = {
   collectCoverage: true,
   coverageThreshold: {
     global: {
-      lines: 25
+      lines: 80
     }
   },
   moduleNameMapper: {
