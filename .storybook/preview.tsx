@@ -27,10 +27,10 @@ const preview: Preview = {
           <div
             className="font-family"
             style={{
-              minHeight: '100%',
               flex: '1',
               display: 'flex',
-              justifyContent: 'center',
+              flexDirection: 'column',
+              justifyContent: 'stretch',
               alignItems: 'center'
             }}
           >

@@ -2,22 +2,20 @@
 
 import LinkNext, { LinkProps as LinkNextProps } from 'next/link'
 import { HTMLAttributeAnchorTarget } from 'react'
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { ColorType, SizeType } from '@/@types'
 import { COLORS, SIZES } from '@/helpers'
 
 type SLinkProps = {
-  $style?: RuleSet<object>
   $color?: ColorType
   $fontSize?: SizeType
 }
 
 const SLink = styled(LinkNext)<SLinkProps>`
-  ${({ $style, $fontSize, $color }) => css`
+  ${({ $fontSize, $color }) => css`
     text-decoration: none;
     font-weight: normal;
-    ${$style && $style}
     ${$color
       ? css`
           color: ${COLORS[$color]};
@@ -36,22 +34,20 @@ const SLink = styled(LinkNext)<SLinkProps>`
   `}
 `
 
-export type LinkProps = {
+export type LinkProps = LinkNextProps & {
   children?: React.ReactNode
   target?: HTMLAttributeAnchorTarget
   color?: ColorType
   size?: SizeType
-  style?: RuleSet<object>
-} & LinkNextProps
+}
 
 export const Link = ({
   children,
   color = 'current-color',
   size = 'body',
-  style,
   ...props
 }: LinkProps) => (
-  <SLink $color={color} $fontSize={size} $style={style} {...props}>
+  <SLink $color={color} $fontSize={size} {...props}>
     {children}
   </SLink>
 )
