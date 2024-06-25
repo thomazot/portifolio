@@ -12,7 +12,5 @@ export default meta
 type Story = StoryObj<typeof Login>
 
 export const Default: Story = {
-  args: {
-    onSubmit: (data) => console.info(data)
-  }
+  args: {}
 }
