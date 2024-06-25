@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import styled, { css, RuleSet } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { Link } from '@/commons/link'
 import { View } from '@/commons/view'
@@ -29,7 +29,7 @@ const DATA_MENU = [
   }
 ]
 
-const SLink: RuleSet<object> = css`
+const SLink = styled(Link)`
   padding: ${Theme.gap};
   position: relative;
 
@@ -141,14 +141,9 @@ export const Menu = () => {
             }}
             data-actived={pathname === props.href}
           >
-            <Link
-              onClick={handleCloseMenu}
-              style={SLink}
-              color="secondary-one"
-              {...props}
-            >
+            <SLink onClick={handleCloseMenu} color="secondary-one" {...props}>
               {label}
-            </Link>
+            </SLink>
           </View>
         ))}
       </SList>
