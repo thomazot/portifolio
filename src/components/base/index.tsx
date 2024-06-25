@@ -10,7 +10,7 @@ const SContent = styled(View)`
     display: flex;
     height: 100%;
     padding: ${theme.gap};
-    width: ${theme.media.lg};
+    width: ${theme.media.xxl};
     max-width: 100%;
     margin: 0 auto;
   `}

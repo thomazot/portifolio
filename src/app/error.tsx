@@ -21,10 +21,10 @@ export default function Error() {
           gap: Theme.gap
         }}
       >
-        <Title size="subtitle" as="h1">
+        <Title color="secondary-one" as="h1">
           ERROR
         </Title>
-        <Title size="subtitle" as="h2">
+        <Title color="secondary-one" size="subtitle" as="h2">
           Something went wrong!
         </Title>
       </View>

@@ -38,14 +38,12 @@ const LoginSchema = z.object({
 export type LoginType = z.infer<typeof LoginSchema>
 
 type LoginProps = {
-  onSubmit: (_data: LoginType) => void
   defaultValue?: LoginType
   loading?: boolean
   forgotPassword?: string
 }
 
 export const Login = ({
-  onSubmit,
   defaultValue,
   loading,
   forgotPassword = '/'
@@ -53,17 +51,15 @@ export const Login = ({
   const {
     register,
     handleSubmit,
-    formState: { errors, isDirty, isValid }
+    formState: { errors }
   } = useForm<LoginType>({
     mode: 'onTouched',
     resolver: zodResolver(LoginSchema),
     defaultValues: defaultValue
   })
 
-  const disabledSubmitButton = !isDirty || !isValid || !loading
-
   function handleLogin(data: LoginType) {
-    onSubmit(data)
+    console.log(data)
   }
 
   return (
@@ -105,7 +101,7 @@ export const Login = ({
             </View>
             <View style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <Button
-                disabled={disabledSubmitButton}
+                loading={loading}
                 type="submit"
                 style={{ marginLeft: 'auto' }}
               >

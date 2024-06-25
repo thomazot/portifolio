@@ -1,9 +1,5 @@
 import type { Metadata } from 'next'
 
-import { View } from '@/commons/view'
-import { Base } from '@/components/base'
-import { Footer } from '@/components/footer'
-import { Header } from '@/components/header'
 import { MainProvider } from '@/context'
 import { ApolloWrapper } from '@/lib/apollo-wrapper'
 import { fonts, StyledRegistry } from '@/lib/styled/styled-registry'
@@ -24,23 +20,7 @@ export default function RootLayout({
       <body className={fonts}>
         <ApolloWrapper>
           <StyledRegistry>
-            <MainProvider>
-              <Base>
-                <Header />
-                <View
-                  as="main"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'stretch',
-                    flex: '1',
-                    overflow: 'hidden'
-                  }}
-                >
-                  <View style={{ flex: '1' }}>{children}</View>
-                </View>
-                <Footer />
-              </Base>
-            </MainProvider>
+            <MainProvider>{children}</MainProvider>
           </StyledRegistry>
         </ApolloWrapper>
       </body>

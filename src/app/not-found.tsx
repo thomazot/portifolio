@@ -22,10 +22,10 @@ export default function Error() {
           gap: Theme.gap
         }}
       >
-        <Title size="subtitle" as="h1">
+        <Title color="secondary-one" as="h1">
           404
         </Title>
-        <Title size="subtitle" as="h2">
+        <Title color="secondary-one" size="subtitle" as="h2">
           This page could not be found.
         </Title>
       </View>
