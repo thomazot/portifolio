@@ -1,14 +1,9 @@
 import { css } from 'styled-components'
 import { RuleSet } from 'styled-components/dist/types'
 
-const device = {
-  xs: '400px',
-  sm: '600px',
-  md: '900px',
-  lg: '1280px',
-  xl: '1440px',
-  xxl: '1920px'
-}
+import { Theme } from '@/configs/theme'
+
+const device = Theme.media
 
 export const media = {
   xs: (style: RuleSet<object>) => css`

@@ -54,7 +54,7 @@ const SNav = styled.nav<{ $open: boolean }>`
     max-width: 300px;
     position: absolute;
     top: 100%;
-    height: calc(100vh - 154px);
+    height: calc(100vh - 132px);
     background: ${theme.color['primary-two']};
     transform: translateX(-${theme.gap});
     opacity: 0;

@@ -18,7 +18,8 @@ const STab = styled.span`
     align-items: center;
     gap: ${theme.gap};
     border-right: solid 1px ${theme.color.lines};
-    padding: ${theme.gap};
+    padding: 12px ${theme.gap};
+    font-size: ${theme.size.lables};
   `}
 `
 

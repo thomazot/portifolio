@@ -19,6 +19,7 @@ const SHeader = styled.header`
     border-bottom: solid 1px ${theme.color.lines};
     position: relative;
     border-radius: ${theme.rounded.md} 0 ${theme.rounded.md} 0;
+    height: 50px;
 
     ${media.lg(css`
       overflow: hidden;

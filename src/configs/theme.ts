@@ -1,5 +1,13 @@
 export const Theme = {
   gap: '16px',
+  media: {
+    xs: '400px',
+    sm: '600px',
+    md: '900px',
+    lg: '1280px',
+    xl: '1440px',
+    xxl: '1920px'
+  },
   rounded: {
     md: '0.5em'
   },
@@ -57,9 +65,9 @@ export const Theme = {
   size: {
     title: '32px',
     subtitle: '18px',
-    body: '14px',
-    lables: '12px',
-    code: '10px'
+    body: '16px',
+    lables: '14px',
+    code: '12px'
   }
 }
 

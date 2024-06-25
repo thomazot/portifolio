@@ -39,8 +39,10 @@ const SLink = styled(Link)`
     justify-content: center;
     align-items: center;
     border-left: solid 1px ${theme.color.lines};
-    padding: 0 ${theme.gap};
+    height: 50px;
+    min-width: 50px;
     color: ${theme.color['secondary-one']};
+    font-size: ${theme.size.lables};
 
     span {
       display: none;
@@ -55,7 +57,7 @@ const SSocial = styled.section`
   ${({ theme }) => css`
     display: flex;
 
-    :nth-child(2) {
+    > :nth-child(2) {
       margin-left: auto;
     }
 
@@ -66,9 +68,10 @@ const SSocial = styled.section`
       a:nth-last-child(2) {
         border-right: solid 1px ${theme.color.lines};
       }
-      :last-child {
+      > :last-child {
         margin-left: auto;
         gap: ${theme.gap};
+        padding: 0 ${theme.gap};
 
         span {
           display: block;
@@ -103,7 +106,9 @@ const SSocial = styled.section`
 
 export const Social = () => (
   <SSocial>
-    <Text style={{ padding: Theme.gap }}>find me in:</Text>
+    <Text size="lables" style={{ padding: Theme.gap }}>
+      find me in:
+    </Text>
     {DATA.map(({ icon, ...props }, index) => (
       <SLink key={index} {...props}>
         <View as="span">{props.title}</View>

@@ -16,10 +16,29 @@ const SInput = styled.input<{ $error?: boolean }>`
     background: ${theme.color['primary-one']};
     color: ${theme.color['secondary-one']};
 
-    &:focus {
+    &:focus,
+    &:active {
       outline: none;
       border-color: ${theme.color['secondary-one']};
       box-shadow: 0 0 3px ${theme.color['secondary-one']};
+    }
+
+    &:autofill,
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:active {
+      outline: none;
+      border-color: ${theme.color.lines};
+      box-shadow: 0 0 3px ${theme.color['secondary-one']};
+      background-color: ${theme.color['primary-one']} !important;
+      transition:
+        background-color 0s 600000s,
+        color 0s 600000s !important;
+      appearance: none !important;
+      color: ${theme.color['secondary-one']} !important;
+      -webkit-text-fill-color: ${theme.color['secondary-one']} !important;
+      -webkit-box-shadow: 0 0 0 30px ${theme.color['primary-one']} inset !important;
     }
 
     ${$error &&

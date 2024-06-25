@@ -10,6 +10,7 @@ import { Link } from '@/commons/link'
 import { Text } from '@/commons/text'
 import { Title } from '@/commons/title'
 import { View } from '@/commons/view'
+import { Theme } from '@/configs/theme'
 import { Button } from '@/forms/button'
 import { FieldCheckbox } from '@/forms/field-checkbox'
 import { FieldText } from '@/forms/field-text'
@@ -69,8 +70,14 @@ export const Login = ({
     <SContent>
       <Card>
         <SForm onSubmit={handleSubmit(handleLogin)}>
-          <View>
-            <Title>_login</Title>
+          <View
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: Theme.gap
+            }}
+          >
+            <Title size="subtitle">_login</Title>
             <FieldText {...register('identifier')} error={errors?.identifier}>
               _username:
             </FieldText>
@@ -81,15 +88,22 @@ export const Login = ({
             >
               _password:
             </FieldText>
-            <View>
+            <View
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between'
+              }}
+            >
               <FieldCheckbox {...register('remember')}>
                 _remember me
               </FieldCheckbox>
               <Link href={forgotPassword}>
-                <Text as="span">_forgot password?</Text>
+                <Text size="code" as="span">
+                  _forgot password?
+                </Text>
               </Link>
             </View>
-            <View>
+            <View style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <Button
                 disabled={disabledSubmitButton}
                 type="submit"
